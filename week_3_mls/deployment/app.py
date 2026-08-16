@@ -5,8 +5,8 @@ import joblib
 from pathlib import Path
 
 # Load the model committed by the pipeline (sits next to this file)
-model_path = os.path.join(os.path.dirname(__file__), "tourism_package_prediction_model_v1.joblib")
-model = joblib.load(model_path)
+#model_path = os.path.join(os.path.dirname(__file__), "tourism_package_prediction_model_v1.joblib")
+#model = joblib.load(model_path)
 
 
 # Load the model committed by the pipeline (sits next to this file)
@@ -26,9 +26,9 @@ model = joblib.load(model_path)
 #model = joblib.load(model_path)
 
 
-#BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-#model_path = os.path.join(BASE_DIR, "tourism_package_prediction_model_v1.joblib")   # or wherever it sits relative to app.py
-#model = joblib.load(model_path)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+model_path = os.path.join(BASE_DIR, "tourism_package_prediction_model_v1.joblib")   # or wherever it sits relative to app.py
+model = joblib.load(model_path)
 
 
 st.title("Tourism Package Purchase Prediction App")
@@ -154,4 +154,3 @@ if st.button("Predict"):
     result = "T package purchased" if prediction == 1 else "Not purchased"
     st.subheader("Prediction Result:")
     st.success(f"The model predicts: **{result}**")
-    
