@@ -30,8 +30,9 @@ if 'Gender' in df.columns:
 label_encoder = LabelEncoder()
 
 # List of categorical columns to encode
-categorical_features = ['TypeofContact', 'Occupation', 'Gender', 'ProductPitched',
-                        'MaritalStatus', 'Designation']
+categorical_features = ['TypeofContact', 'Occupation', 'Gender', 'MaritalStatus',
+                        'Designation', 'ProductPitched', 'Passport', 'OwnCar']
+
 
 for col in categorical_features:
     if col in df.columns:
